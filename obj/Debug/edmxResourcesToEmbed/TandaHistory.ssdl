@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmployeeModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="EmployeeModelStoreContainer">
+    <EntitySet Name="EmployeeDetails" EntityType="EmployeeModel.Store.EmployeeDetails" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="EmployeeDetails">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="FirstName" Type="nchar" MaxLength="20" />
+    <Property Name="Surname" Type="nchar" MaxLength="20" />
+    <Property Name="Address" Type="ntext" />
+    <Property Name="Phone" Type="numeric" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6013: The table/view 'Employee.dbo.EmployeeUnnatendancy' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="EmployeeUnnatendancy">
+        <Property Name="EmployeeID" Type="int" />
+        <Property Name="Name" Type="nchar" MaxLength="20" />
+        <Property Name="Surname" Type="nchar" MaxLength="20" />
+        <Property Name="StartDayOff" Type="date" />
+        <Property Name="EndDayOff" Type="date" />
+        <Property Name="DateInOffice" Type="date" />
+        <Property Name="DayOffCause" Type="nchar" MaxLength="50" />
+      </EntityType>
+      Errors Found During Generation:
+      warning 6013: The table/view 'Employee.dbo.trackinghours' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="trackinghours">
+        <Property Name="EmployeeID" Type="int" />
+        <Property Name="Surname" Type="nchar" MaxLength="10" />
+        <Property Name="currentDate" Type="date" />
+        <Property Name="Arrival" Type="time" />
+        <Property Name="Departure" Type="time" />
+      </EntityType>-->
+</Schema>
