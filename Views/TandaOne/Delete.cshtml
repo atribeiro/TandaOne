@@ -1,0 +1,54 @@
+﻿@model TandaOne.trackinghour
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>trackinghour</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EmployeeID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EmployeeID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Surname)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Surname)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.currentDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.currentDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Arrival)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Arrival)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Departure)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Departure)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

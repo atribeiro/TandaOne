@@ -8,108 +8,107 @@ using System.Web.Mvc;
 
 namespace TandaOne.Controllers
 {
-   
-    public class TandaHistoryController : Controller
+    public class TandaOneController : Controller
     {
-        private EmployeeEntities db = new EmployeeEntities();
+        private EmployeeEntities3 db = new EmployeeEntities3();
 
         //
-        // GET: /TandaHistory/
+        // GET: /TandaOne/
 
         public ActionResult Index()
         {
-            return View(db.EmployeeDetails.ToList());
+            return View(db.trackinghours.ToList());
         }
 
         //
-        // GET: /TandaHistory/Details/5
+        // GET: /TandaOne/Details/5
 
         public ActionResult Details(int id = 0)
         {
-            EmployeeDetail employeedetail = db.EmployeeDetails.Find(id);
-            if (employeedetail == null)
+            trackinghour trackinghour = db.trackinghours.Find(id);
+            if (trackinghour == null)
             {
                 return HttpNotFound();
             }
-            return View(employeedetail);
+            return View(trackinghour);
         }
 
         //
-        // GET: /TandaHistory/Create
-        [Authorize]
+        // GET: /TandaOne/Create
+
         public ActionResult Create()
         {
             return View();
         }
 
         //
-        // POST: /TandaHistory/Create
-        [Authorize]
+        // POST: /TandaOne/Create
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(EmployeeDetail employeedetail)
+        public ActionResult Create(trackinghour trackinghour)
         {
             if (ModelState.IsValid)
             {
-                db.EmployeeDetails.Add(employeedetail);
+                db.trackinghours.Add(trackinghour);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(employeedetail);
+            return View(trackinghour);
         }
 
         //
-        // GET: /TandaHistory/Edit/5
-        [Authorize]
+        // GET: /TandaOne/Edit/5
+
         public ActionResult Edit(int id = 0)
         {
-            EmployeeDetail employeedetail = db.EmployeeDetails.Find(id);
-            if (employeedetail == null)
+            trackinghour trackinghour = db.trackinghours.Find(id);
+            if (trackinghour == null)
             {
                 return HttpNotFound();
             }
-            return View(employeedetail);
+            return View(trackinghour);
         }
 
         //
-        // POST: /TandaHistory/Edit/5
-        [Authorize]
+        // POST: /TandaOne/Edit/5
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(EmployeeDetail employeedetail)
+        public ActionResult Edit(trackinghour trackinghour)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(employeedetail).State = EntityState.Modified;
+                db.Entry(trackinghour).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(employeedetail);
+            return View(trackinghour);
         }
 
         //
-        // GET: /TandaHistory/Delete/5
-        [Authorize]
+        // GET: /TandaOne/Delete/5
+
         public ActionResult Delete(int id = 0)
         {
-            EmployeeDetail employeedetail = db.EmployeeDetails.Find(id);
-            if (employeedetail == null)
+            trackinghour trackinghour = db.trackinghours.Find(id);
+            if (trackinghour == null)
             {
                 return HttpNotFound();
             }
-            return View(employeedetail);
+            return View(trackinghour);
         }
 
         //
-        // POST: /TandaHistory/Delete/5
-        
+        // POST: /TandaOne/Delete/5
+
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            EmployeeDetail employeedetail = db.EmployeeDetails.Find(id);
-            db.EmployeeDetails.Remove(employeedetail);
+            trackinghour trackinghour = db.trackinghours.Find(id);
+            db.trackinghours.Remove(trackinghour);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

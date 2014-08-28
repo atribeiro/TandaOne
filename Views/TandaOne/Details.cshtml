@@ -1,0 +1,50 @@
+﻿@model TandaOne.trackinghour
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>trackinghour</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.EmployeeID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EmployeeID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Surname)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Surname)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.currentDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.currentDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Arrival)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Arrival)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Departure)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Departure)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

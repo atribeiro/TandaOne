@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmployeeModel1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="EmployeeEntities3" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="trackinghours" EntityType="EmployeeModel1.trackinghour" />
+  </EntityContainer>
+  <EntityType Name="trackinghour">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="Surname" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="currentDate" Type="DateTime" Precision="0" />
+    <Property Name="Arrival" Type="Time" Precision="7" />
+    <Property Name="Departure" Type="Time" Precision="7" />
+  </EntityType>
+</Schema>

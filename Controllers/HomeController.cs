@@ -28,21 +28,21 @@ namespace TandaOne.Controllers
            
         }
 
-        public ActionResult TandaOne()
-        {
-            var model = new TandaOneModel();
+        //public ActionResult TandaOne()
+        //{
+        //    //var model = new TandaOneModel();
 
 
-            model.EmployeeId = 1;
-            model.FirstName = "Anabela";
-            model.Surname = "Ribeiro";
-            model.Date = new DateTime().ToLocalTime();
-            model.ArrivalTime = new TimeSpan();
-            model.DepartureTime = new TimeSpan();
+        //    //model.EmployeeId = 1;
+        //    //model.FirstName = "Anabela";
+        //    //model.Surname = "Ribeiro";
+        //    //model.Date = new DateTime().ToLocalTime();
+        //    //model.ArrivalTime = new TimeSpan();
+        //    //model.DepartureTime = new TimeSpan();
 
 
-            return View(model);
-        }
+        //    //return View(model);
+        //}
 
         public ActionResult Contact()
         {
