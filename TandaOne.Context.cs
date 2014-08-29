@@ -13,10 +13,10 @@ namespace TandaOne
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class EmployeeEntities3 : DbContext
+    public partial class EmployeeEntities2 : DbContext
     {
-        public EmployeeEntities3()
-            : base("name=EmployeeEntities3")
+        public EmployeeEntities2()
+            : base("name=EmployeeEntities2")
         {
         }
     
@@ -25,6 +25,7 @@ namespace TandaOne
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<EmployeeDetail> EmployeeDetails { get; set; }
         public DbSet<trackinghour> trackinghours { get; set; }
     }
 }

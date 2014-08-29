@@ -1,10 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="EmployeeModel1StoreContainer" CdmEntityContainer="EmployeeEntities3">
+  <EntityContainerMapping StorageEntityContainer="EmployeeModel1StoreContainer" CdmEntityContainer="EmployeeEntities2">
+    <EntitySetMapping Name="EmployeeDetails">
+      <EntityTypeMapping TypeName="EmployeeModel1.EmployeeDetail">
+        <MappingFragment StoreEntitySet="EmployeeDetails">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="trackinghours">
       <EntityTypeMapping TypeName="EmployeeModel1.trackinghour">
         <MappingFragment StoreEntitySet="trackinghours">
-          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="Surname" ColumnName="Surname" />
           <ScalarProperty Name="currentDate" ColumnName="currentDate" />
           <ScalarProperty Name="Arrival" ColumnName="Arrival" />

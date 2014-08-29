@@ -191,14 +191,16 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TandaHistoryController.cs" />
     <Compile Include="Controllers\TandaOneController.cs" />
+    <Compile Include="Controllers\trackinghoursController.cs" />
     <Compile Include="EmployeeDetail.cs">
-      <DependentUpon>TandaHistory.tt</DependentUpon>
+      <DependentUpon>tandaOne.tt</DependentUpon>
     </Compile>
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\TandaOneModel.cs" />
+    <Compile Include="Models\TandaOne.cs" />
+    <Compile Include="Models\TrackinghoursModel.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TandaHistory.Context.cs">
@@ -216,23 +218,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TandaHistory.edmx</DependentUpon>
     </Compile>
-    <Compile Include="TandaOne.Context.cs">
+    <Compile Include="tandaOne.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TandaOne.Context.tt</DependentUpon>
+      <DependentUpon>tandaOne.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="TandaOne.cs">
+    <Compile Include="tandaOne.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TandaOne.tt</DependentUpon>
+      <DependentUpon>tandaOne.tt</DependentUpon>
     </Compile>
-    <Compile Include="TandaOne.Designer.cs">
+    <Compile Include="tandaOne.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>TandaOne.edmx</DependentUpon>
+      <DependentUpon>tandaOne.edmx</DependentUpon>
     </Compile>
     <Compile Include="trackinghour.cs">
-      <DependentUpon>TandaOne.tt</DependentUpon>
+      <DependentUpon>tandaOne.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -368,28 +370,29 @@
     <Content Include="Views\TandaHistory\Create.cshtml" />
     <Content Include="Views\TandaHistory\Edit.cshtml" />
     <Content Include="Views\TandaHistory\Delete.cshtml" />
-    <EntityDeploy Include="TandaOne.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>TandaOne.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="TandaOne.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TandaOne.edmx</DependentUpon>
-      <LastGenOutput>TandaOne.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="TandaOne.edmx.diagram">
-      <DependentUpon>TandaOne.edmx</DependentUpon>
-    </Content>
-    <Content Include="TandaOne.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TandaOne.edmx</DependentUpon>
-      <LastGenOutput>TandaOne.cs</LastGenOutput>
-    </Content>
     <Content Include="Views\TandaOne\Index.cshtml" />
     <Content Include="Views\TandaOne\Details.cshtml" />
     <Content Include="Views\TandaOne\Create.cshtml" />
     <Content Include="Views\TandaOne\Edit.cshtml" />
     <Content Include="Views\TandaOne\Delete.cshtml" />
+    <EntityDeploy Include="tandaOne.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>tandaOne.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="tandaOne.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>tandaOne.edmx</DependentUpon>
+      <LastGenOutput>tandaOne.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="tandaOne.edmx.diagram">
+      <DependentUpon>tandaOne.edmx</DependentUpon>
+    </Content>
+    <Content Include="tandaOne.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>tandaOne.edmx</DependentUpon>
+      <LastGenOutput>tandaOne.cs</LastGenOutput>
+    </Content>
+    <Content Include="Views\Trackinghours\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

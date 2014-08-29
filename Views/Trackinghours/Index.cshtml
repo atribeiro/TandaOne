@@ -1,20 +1,22 @@
-﻿@using TandaOne.Models
-@model global::TandaOne.trackinghour
+﻿@using TandaOne
+@model TandaOne.Models.TandaOneModel
+
 
 @{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "login";
 }
 
 <h2>Create</h2>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
         <legend>trackinghour</legend>
 
-       @* <div class="editor-label">
+        @* <div class="editor-label">
             @Html.LabelFor(model => model.EmployeeID)
         </div>
         <div class="editor-field">
@@ -29,29 +31,29 @@
             @Html.EditorFor(model => model.Surname)
             @Html.ValidationMessageFor(model => model.Surname)
         </div>*@
-        
+
         <div class="editor-label">
-            @Html.LabelFor(model => model.currentDate)
+            @Html.LabelFor(model => model.Date)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.currentDate)
-            @Html.ValidationMessageFor(model => model.currentDate)
+            @Html.(model => model.Date)
+            @Html.ValidationMessageFor(model => model.Date)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Arrival)
+            @Html.LabelFor(model => model.ArrivalTime)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Arrival)
-            @Html.ValidationMessageFor(model => model.Arrival)
+            @Html.EditorFor(model => model.ArrivalTime)
+            @Html.ValidationMessageFor(model => model.ArrivalTime)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Departure)
+            @Html.LabelFor(model => model.DepartureTime)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Departure)
-            @Html.ValidationMessageFor(model => model.Departure)
+            @Html.EditorFor(model => model.DepartureTime)
+            @Html.ValidationMessageFor(model => model.DepartureTime)
         </div>
 
         <p>

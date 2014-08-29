@@ -5,44 +5,44 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TandaOne.Models;
 
 namespace TandaOne.Controllers
 {
     public class TandaOneController : Controller
     {
-        private EmployeeEntities3 db = new EmployeeEntities3();
-
-        //
-        // GET: /TandaOne/
-
+        private EmployeeEntities2 db = new EmployeeEntities2();
+        
         public ActionResult Index()
         {
-            return View(db.trackinghours.ToList());
+
+            List<EmployeeDetail> employee = db.EmployeeDetails.ToList();
+
+            return View(employee);
         }
 
-        //
-        // GET: /TandaOne/Details/5
 
-        public ActionResult Details(int id = 0)
-        {
-            trackinghour trackinghour = db.trackinghours.Find(id);
-            if (trackinghour == null)
-            {
-                return HttpNotFound();
-            }
-            return View(trackinghour);
-        }
+        //public ActionResult Details(int id = 0)
+        //{
 
-        //
-        // GET: /TandaOne/Create
+        //    trackinghour trackinghour = db.trackinghours.Find(id);
+        //    if (trackinghour == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(trackinghour);
+        //}
+
+        
+         //GET: /TandaOne/Create
 
         public ActionResult Create()
         {
             return View();
         }
 
-        //
-        // POST: /TandaOne/Create
+        
+         //POST: /TandaOne/Create
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -58,8 +58,8 @@ namespace TandaOne.Controllers
             return View(trackinghour);
         }
 
-        //
-        // GET: /TandaOne/Edit/5
+        
+         //GET: /TandaOne/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
@@ -71,8 +71,8 @@ namespace TandaOne.Controllers
             return View(trackinghour);
         }
 
-        //
-        // POST: /TandaOne/Edit/5
+        
+         //POST: /TandaOne/Edit/5
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -87,8 +87,8 @@ namespace TandaOne.Controllers
             return View(trackinghour);
         }
 
-        //
-        // GET: /TandaOne/Delete/5
+        
+         //GET: /TandaOne/Delete/5
 
         public ActionResult Delete(int id = 0)
         {
@@ -100,8 +100,8 @@ namespace TandaOne.Controllers
             return View(trackinghour);
         }
 
-        //
-        // POST: /TandaOne/Delete/5
+        
+         //POST: /TandaOne/Delete/5
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
