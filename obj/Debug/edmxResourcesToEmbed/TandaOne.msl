@@ -15,7 +15,7 @@
     <EntitySetMapping Name="trackinghours">
       <EntityTypeMapping TypeName="EmployeeModel1.trackinghour">
         <MappingFragment StoreEntitySet="trackinghours">
-          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
           <ScalarProperty Name="Surname" ColumnName="Surname" />
           <ScalarProperty Name="currentDate" ColumnName="currentDate" />
           <ScalarProperty Name="Arrival" ColumnName="Arrival" />

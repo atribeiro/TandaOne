@@ -16,12 +16,12 @@
   </EntityType>
   <EntityType Name="trackinghour">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="EmployeeID" />
     </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" />
     <Property Name="Surname" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
     <Property Name="currentDate" Type="DateTime" Precision="0" />
     <Property Name="Arrival" Type="Time" Precision="7" />
     <Property Name="Departure" Type="Time" Precision="7" />
+    <Property Type="Int32" Name="EmployeeID" Nullable="false" />
   </EntityType>
 </Schema>

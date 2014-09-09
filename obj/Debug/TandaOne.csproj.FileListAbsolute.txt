@@ -87,3 +87,6 @@ D:\Visual Studio 2012\Projects\TandaOne\TandaOne\bin\zh-Hant\System.Spatial.reso
 D:\Visual Studio 2012\Projects\TandaOne\TandaOne\obj\Debug\TandaOne.csprojResolveAssemblyReference.cache
 D:\Visual Studio 2012\Projects\TandaOne\TandaOne\obj\Debug\TandaOne.dll
 D:\Visual Studio 2012\Projects\TandaOne\TandaOne\obj\Debug\TandaOne.pdb
+D:\Visual Studio 2012\Projects\TandaOne\TandaOne-master\obj\Debug\TandaOne.csprojResolveAssemblyReference.cache
+D:\Visual Studio 2012\Projects\TandaOne\TandaOne-master\obj\Debug\TandaOne.dll
+D:\Visual Studio 2012\Projects\TandaOne\TandaOne-master\obj\Debug\TandaOne.pdb

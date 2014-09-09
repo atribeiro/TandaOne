@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EmployeeModel1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="EmployeeModel1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="EmployeeModel1StoreContainer">
           <EntitySet Name="EmployeeDetails" EntityType="EmployeeModel1.Store.EmployeeDetails" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="trackinghours" EntityType="EmployeeModel1.Store.trackinghours" store:Type="Tables" Schema="dbo" />
@@ -21,16 +21,16 @@
         </EntityType>
         <EntityType Name="trackinghours">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="EmployeeID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="EmployeeID" Type="int" Nullable="false" />
           <Property Name="Surname" Type="nchar" MaxLength="10" />
           <Property Name="currentDate" Type="date" />
           <Property Name="Arrival" Type="time" />
           <Property Name="Departure" Type="time" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6013: The table/view 'Employee.dbo.EmployeeUnnatendancy' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      warning 6013: The table/view 'EmplSample.dbo.EmployeeUnnatendancy' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
       
       <EntityType Name="EmployeeUnnatendancy">
         <Property Name="EmployeeID" Type="int" />
@@ -41,8 +41,7 @@
         <Property Name="DateInOffice" Type="date" />
         <Property Name="DayOffCause" Type="nchar" MaxLength="50" />
       </EntityType>-->
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EmployeeModel1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -62,13 +61,13 @@
         </EntityType>
         <EntityType Name="trackinghour">
           <Key>
-            <PropertyRef Name="ID" />
+            <PropertyRef Name="EmployeeID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
           <Property Name="Surname" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
           <Property Name="currentDate" Type="DateTime" Precision="0" />
           <Property Name="Arrival" Type="Time" Precision="7" />
           <Property Name="Departure" Type="Time" Precision="7" />
+          <Property Type="Int32" Name="EmployeeID" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -90,7 +89,7 @@
           <EntitySetMapping Name="trackinghours">
             <EntityTypeMapping TypeName="EmployeeModel1.trackinghour">
               <MappingFragment StoreEntitySet="trackinghours">
-                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
                 <ScalarProperty Name="Surname" ColumnName="Surname" />
                 <ScalarProperty Name="currentDate" ColumnName="currentDate" />
                 <ScalarProperty Name="Arrival" ColumnName="Arrival" />
@@ -114,7 +113,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Default" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

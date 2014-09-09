@@ -1,5 +1,6 @@
 ﻿@using TandaOne
-@model IEnumerable<TandaOne.EmployeeDetail>
+@model IEnumerable<TandaOne.trackinghour>
+
 
 @{
     ViewBag.Title = "EmployeeDetail";
@@ -19,7 +20,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Surname)
         </th>
-     @*   <th>
+        <th>
             @Html.DisplayNameFor(model => model.currentDate)
         </th>
         <th>
@@ -27,26 +28,26 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Departure)
-        </th>*@
+        </th>
         <th></th>
     </tr>
 
- @foreach (EmployeeDetail employee in @Model)
+ @foreach (trackinghour employee in @Model)
     {
     <tr>
         
         <td>
            @Html.ActionLink(employee.Surname,"Index", "Trackinghours", new {employeeId = employee.EmployeeID}, null)
         </td>
-      @*  <td>
-            @Html.DisplayFor(modelItem => item.currentDate)
+        <td>
+            @Html.(DateTime.Now).Display(modelItem => item.currentDate)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Arrival)
+            @Html.(DateTime.Now).Display(modelItem => item.Arrival)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Departure)
-        </td>*@
+            @Html.(DateTime.Now).Display(modelItem => item.Departure)
+        </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=employee.EmployeeID }) |
             @Html.ActionLink("Details", "Details", new { id=employee.EmployeeID  }) |

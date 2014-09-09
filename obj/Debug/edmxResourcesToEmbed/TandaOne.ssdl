@@ -16,16 +16,16 @@
   </EntityType>
   <EntityType Name="trackinghours">
     <Key>
-      <PropertyRef Name="ID" />
+      <PropertyRef Name="EmployeeID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
     <Property Name="Surname" Type="nchar" MaxLength="10" />
     <Property Name="currentDate" Type="date" />
     <Property Name="Arrival" Type="time" />
     <Property Name="Departure" Type="time" />
   </EntityType>
   <!--Errors Found During Generation:
-      warning 6013: The table/view 'Employee.dbo.EmployeeUnnatendancy' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      warning 6013: The table/view 'EmplSample.dbo.EmployeeUnnatendancy' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
       
       <EntityType Name="EmployeeUnnatendancy">
         <Property Name="EmployeeID" Type="int" />
