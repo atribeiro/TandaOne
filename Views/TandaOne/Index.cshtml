@@ -1,17 +1,14 @@
-﻿@using TandaOne
-@model IEnumerable<TandaOne.trackinghour>
-
+﻿@model IEnumerable<TandaOne.trackinghour>
 
 @{
-    ViewBag.Title = "EmployeeDetail";
+    ViewBag.Title = "Index";
 }
 
-<h2>Employee Detail</h2>
+<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-
 <table>
     <tr>
         <th>
@@ -20,10 +17,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Surname)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.currentDate)
-        </th>
-        <th>
+       <th>
             @Html.DisplayNameFor(model => model.Arrival)
         </th>
         <th>
@@ -32,26 +26,24 @@
         <th></th>
     </tr>
 
- @foreach (trackinghour employee in @Model)
-    {
+@foreach (var item in Model) {
     <tr>
-        
-        <td>
-           @Html.ActionLink(employee.Surname,"Index", "Trackinghours", new {employeeId = employee.EmployeeID}, null)
+         <td>
+            @Html.DisplayFor(modelItem => item.EmployeeID)
         </td>
         <td>
-            @Html.(DateTime.Now).Display(modelItem => item.currentDate)
+            @Html.DisplayFor(modelItem => item.Surname)
+        </td>
+       <td>
+            @Html.DisplayFor(modelItem => item.Arrival)
         </td>
         <td>
-            @Html.(DateTime.Now).Display(modelItem => item.Arrival)
+            @Html.DisplayFor(modelItem => item.Departure)
         </td>
         <td>
-            @Html.(DateTime.Now).Display(modelItem => item.Departure)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=employee.EmployeeID }) |
-            @Html.ActionLink("Details", "Details", new { id=employee.EmployeeID  }) |
-            @Html.ActionLink("Delete", "Delete", new { id=employee.EmployeeID  })
+            @Html.ActionLink("Edit", "Edit", new { id=item.EmployeeID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EmployeeID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EmployeeID })
         </td>
     </tr>
 }

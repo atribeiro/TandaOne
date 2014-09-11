@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Globalization;
 using System.Web.Mvc;
 using System.Web.Security;
+using System.Web.UI.WebControls;
 
 namespace TandaOne.Models
 {
@@ -69,7 +71,8 @@ namespace TandaOne.Models
 
         [Display(Name = "Remember me?")]
         public bool RememberMe { get; set; }
-    }
+
+     }
 
     public class RegisterModel
     {

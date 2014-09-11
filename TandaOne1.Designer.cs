@@ -24,32 +24,32 @@ namespace TandaOne
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    public partial class EmployeeEntities2 : ObjectContext
+    public partial class EmplSampleEntities : ObjectContext
     {
         #region Constructors
     
         /// <summary>
-        /// Initializes a new EmployeeEntities2 object using the connection string found in the 'EmployeeEntities2' section of the application configuration file.
+        /// Initializes a new EmplSampleEntities object using the connection string found in the 'EmplSampleEntities' section of the application configuration file.
         /// </summary>
-        public EmployeeEntities2() : base("name=EmployeeEntities2", "EmployeeEntities2")
+        public EmplSampleEntities() : base("name=EmplSampleEntities", "EmplSampleEntities")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
     
         /// <summary>
-        /// Initialize a new EmployeeEntities2 object.
+        /// Initialize a new EmplSampleEntities object.
         /// </summary>
-        public EmployeeEntities2(string connectionString) : base(connectionString, "EmployeeEntities2")
+        public EmplSampleEntities(string connectionString) : base(connectionString, "EmplSampleEntities")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
         }
     
         /// <summary>
-        /// Initialize a new EmployeeEntities2 object.
+        /// Initialize a new EmplSampleEntities object.
         /// </summary>
-        public EmployeeEntities2(EntityConnection connection) : base(connection, "EmployeeEntities2")
+        public EmplSampleEntities(EntityConnection connection) : base(connection, "EmplSampleEntities")
         {
             this.ContextOptions.LazyLoadingEnabled = true;
             OnContextCreated();
@@ -96,7 +96,6 @@ namespace TandaOne
             }
         }
         private ObjectSet<trackinghour> _trackinghours;
-        //public object Entry;
 
         #endregion
 
@@ -121,12 +120,7 @@ namespace TandaOne
         #endregion
 
 
-        //internal void trackinghours(trackinghour hoursDetail)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        internal object Entry(trackinghour trackinghour)
+        internal System.Collections.Generic.IEnumerable<EmployeeDetail> ExecuteQuery<T1>(string p)
         {
             throw new NotImplementedException();
         }
@@ -139,7 +133,7 @@ namespace TandaOne
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="EmployeeModel1", Name="EmployeeDetail")]
+    [EdmEntityTypeAttribute(NamespaceName="EmplSampleModel", Name="EmployeeDetail")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class EmployeeDetail : EntityObject
@@ -292,7 +286,7 @@ namespace TandaOne
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="EmployeeModel1", Name="trackinghour")]
+    [EdmEntityTypeAttribute(NamespaceName="EmplSampleModel", Name="trackinghour")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
     public partial class trackinghour : EntityObject
@@ -313,6 +307,33 @@ namespace TandaOne
         #endregion
 
         #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 EmployeeID
+        {
+            get
+            {
+                return _EmployeeID;
+            }
+            set
+            {
+                if (_EmployeeID != value)
+                {
+                    OnEmployeeIDChanging(value);
+                    ReportPropertyChanging("EmployeeID");
+                    _EmployeeID = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("EmployeeID");
+                    OnEmployeeIDChanged();
+                }
+            }
+        }
+        private global::System.Int32 _EmployeeID;
+        partial void OnEmployeeIDChanging(global::System.Int32 value);
+        partial void OnEmployeeIDChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -343,31 +364,7 @@ namespace TandaOne
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public DateTime? currentDate
-        {
-            get
-            {
-                return _currentDate;
-            }
-            set
-            {
-                OncurrentDateChanging(value);
-                ReportPropertyChanging("currentDate");
-                _currentDate = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("currentDate");
-                OncurrentDateChanged();
-            }
-        }
-        private Nullable<global::System.DateTime> _currentDate;
-        partial void OncurrentDateChanging(Nullable<global::System.DateTime> value);
-        partial void OncurrentDateChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public TimeSpan? Arrival
+        public Nullable<global::System.DateTime> Arrival
         {
             get
             {
@@ -382,8 +379,8 @@ namespace TandaOne
                 OnArrivalChanged();
             }
         }
-        private Nullable<global::System.TimeSpan> _Arrival;
-        partial void OnArrivalChanging(Nullable<global::System.TimeSpan> value);
+        private Nullable<global::System.DateTime> _Arrival;
+        partial void OnArrivalChanging(Nullable<global::System.DateTime> value);
         partial void OnArrivalChanged();
     
         /// <summary>
@@ -391,7 +388,7 @@ namespace TandaOne
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public TimeSpan? Departure
+        public Nullable<global::System.DateTime> Departure
         {
             get
             {
@@ -406,36 +403,9 @@ namespace TandaOne
                 OnDepartureChanged();
             }
         }
-        private Nullable<global::System.TimeSpan> _Departure;
-        partial void OnDepartureChanging(Nullable<global::System.TimeSpan> value);
+        private Nullable<global::System.DateTime> _Departure;
+        partial void OnDepartureChanging(Nullable<global::System.DateTime> value);
         partial void OnDepartureChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 EmployeeID
-        {
-            get
-            {
-                return _EmployeeID;
-            }
-            set
-            {
-                if (_EmployeeID != value)
-                {
-                    OnEmployeeIDChanging(value);
-                    ReportPropertyChanging("EmployeeID");
-                    _EmployeeID = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("EmployeeID");
-                    OnEmployeeIDChanged();
-                }
-            }
-        }
-        private global::System.Int32 _EmployeeID;
-        partial void OnEmployeeIDChanging(global::System.Int32 value);
-        partial void OnEmployeeIDChanged();
 
         #endregion
 

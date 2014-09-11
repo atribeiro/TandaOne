@@ -23,4 +23,16 @@
     <Property Name="Arrival" Type="datetime" />
     <Property Name="Departure" Type="datetime" />
   </EntityType>
+  <!--Errors Found During Generation:
+      warning 6013: The table/view 'EmplSample.dbo.EmployeeUnnatendancy' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="EmployeeUnnatendancy">
+        <Property Name="EmployeeID" Type="int" />
+        <Property Name="Name" Type="nchar" MaxLength="20" />
+        <Property Name="Surname" Type="nchar" MaxLength="20" />
+        <Property Name="StartDayOff" Type="date" />
+        <Property Name="EndDayOff" Type="date" />
+        <Property Name="DateInOffice" Type="date" />
+        <Property Name="DayOffCause" Type="nchar" MaxLength="50" />
+      </EntityType>-->
 </Schema>
