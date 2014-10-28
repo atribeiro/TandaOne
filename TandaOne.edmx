@@ -4,10 +4,10 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="EmplSampleModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-        <EntityContainer Name="EmplSampleModelStoreContainer">
-          <EntitySet Name="EmployeeDetails" EntityType="EmplSampleModel.Store.EmployeeDetails" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="trackinghours" EntityType="EmplSampleModel.Store.trackinghours" store:Type="Tables" Schema="dbo" />
+    <Schema Namespace="EmployeeModel1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="EmployeeModel1StoreContainer">
+          <EntitySet Name="EmployeeDetails" EntityType="EmployeeModel1.Store.EmployeeDetails" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="trackinghours" EntityType="EmployeeModel1.Store.trackinghours" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
         <EntityType Name="EmployeeDetails">
           <Key>
@@ -25,16 +25,29 @@
           </Key>
           <Property Name="EmployeeID" Type="int" Nullable="false" />
           <Property Name="Surname" Type="nchar" MaxLength="10" />
-          <Property Name="Arrival" Type="datetime" />
-          <Property Name="Departure" Type="datetime" />
+          <Property Name="currentDate" Type="date" />
+          <Property Name="Arrival" Type="time" />
+          <Property Name="Departure" Type="time" />
         </EntityType>
+        <!--Errors Found During Generation:
+      warning 6013: The table/view 'EmplSample.dbo.EmployeeUnnatendancy' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="EmployeeUnnatendancy">
+        <Property Name="EmployeeID" Type="int" />
+        <Property Name="Name" Type="nchar" MaxLength="20" />
+        <Property Name="Surname" Type="nchar" MaxLength="20" />
+        <Property Name="StartDayOff" Type="date" />
+        <Property Name="EndDayOff" Type="date" />
+        <Property Name="DateInOffice" Type="date" />
+        <Property Name="DayOffCause" Type="nchar" MaxLength="50" />
+      </EntityType>-->
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="EmplSampleModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-        <EntityContainer Name="EmplSampleEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="EmployeeDetails" EntityType="EmplSampleModel.EmployeeDetail" />
-          <EntitySet Name="trackinghours" EntityType="EmplSampleModel.trackinghour" />
+      <Schema Namespace="EmployeeModel1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="EmployeeEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EmployeeDetails" EntityType="EmployeeModel1.EmployeeDetail" />
+          <EntitySet Name="trackinghours" EntityType="EmployeeModel1.trackinghour" />
         </EntityContainer>
         <EntityType Name="EmployeeDetail">
           <Key>
@@ -50,19 +63,20 @@
           <Key>
             <PropertyRef Name="EmployeeID" />
           </Key>
-          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
           <Property Name="Surname" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
-          <Property Name="Arrival" Type="DateTime" Precision="3" />
-          <Property Name="Departure" Type="DateTime" Precision="3" />
+          <Property Name="currentDate" Type="DateTime" Precision="0" />
+          <Property Name="Arrival" Type="Time" Precision="7" />
+          <Property Name="Departure" Type="Time" Precision="7" />
+          <Property Type="Int32" Name="EmployeeID" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="EmplSampleModelStoreContainer" CdmEntityContainer="EmplSampleEntities">
+        <EntityContainerMapping StorageEntityContainer="EmployeeModel1StoreContainer" CdmEntityContainer="EmployeeEntities2">
           <EntitySetMapping Name="EmployeeDetails">
-            <EntityTypeMapping TypeName="EmplSampleModel.EmployeeDetail">
+            <EntityTypeMapping TypeName="EmployeeModel1.EmployeeDetail">
               <MappingFragment StoreEntitySet="EmployeeDetails">
                 <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -73,10 +87,11 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="trackinghours">
-            <EntityTypeMapping TypeName="EmplSampleModel.trackinghour">
+            <EntityTypeMapping TypeName="EmployeeModel1.trackinghour">
               <MappingFragment StoreEntitySet="trackinghours">
                 <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
                 <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="currentDate" ColumnName="currentDate" />
                 <ScalarProperty Name="Arrival" ColumnName="Arrival" />
                 <ScalarProperty Name="Departure" ColumnName="Departure" />
               </MappingFragment>

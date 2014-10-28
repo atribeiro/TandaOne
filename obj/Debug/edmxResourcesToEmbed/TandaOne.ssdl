@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="EmplSampleModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-  <EntityContainer Name="EmplSampleModelStoreContainer">
-    <EntitySet Name="EmployeeDetails" EntityType="EmplSampleModel.Store.EmployeeDetails" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="trackinghours" EntityType="EmplSampleModel.Store.trackinghours" store:Type="Tables" Schema="dbo" />
+<Schema Namespace="EmployeeModel1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="EmployeeModel1StoreContainer">
+    <EntitySet Name="EmployeeDetails" EntityType="EmployeeModel1.Store.EmployeeDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="trackinghours" EntityType="EmployeeModel1.Store.trackinghours" store:Type="Tables" Schema="dbo" />
   </EntityContainer>
   <EntityType Name="EmployeeDetails">
     <Key>
@@ -20,7 +20,20 @@
     </Key>
     <Property Name="EmployeeID" Type="int" Nullable="false" />
     <Property Name="Surname" Type="nchar" MaxLength="10" />
-    <Property Name="Arrival" Type="datetime" />
-    <Property Name="Departure" Type="datetime" />
+    <Property Name="currentDate" Type="date" />
+    <Property Name="Arrival" Type="time" />
+    <Property Name="Departure" Type="time" />
   </EntityType>
+  <!--Errors Found During Generation:
+      warning 6013: The table/view 'EmplSample.dbo.EmployeeUnnatendancy' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="EmployeeUnnatendancy">
+        <Property Name="EmployeeID" Type="int" />
+        <Property Name="Name" Type="nchar" MaxLength="20" />
+        <Property Name="Surname" Type="nchar" MaxLength="20" />
+        <Property Name="StartDayOff" Type="date" />
+        <Property Name="EndDayOff" Type="date" />
+        <Property Name="DateInOffice" Type="date" />
+        <Property Name="DayOffCause" Type="nchar" MaxLength="50" />
+      </EntityType>-->
 </Schema>

@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="EmplSampleModelStoreContainer" CdmEntityContainer="EmplSampleEntities">
+  <EntityContainerMapping StorageEntityContainer="EmployeeModel1StoreContainer" CdmEntityContainer="EmployeeEntities2">
     <EntitySetMapping Name="EmployeeDetails">
-      <EntityTypeMapping TypeName="EmplSampleModel.EmployeeDetail">
+      <EntityTypeMapping TypeName="EmployeeModel1.EmployeeDetail">
         <MappingFragment StoreEntitySet="EmployeeDetails">
           <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
@@ -13,10 +13,11 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="trackinghours">
-      <EntityTypeMapping TypeName="EmplSampleModel.trackinghour">
+      <EntityTypeMapping TypeName="EmployeeModel1.trackinghour">
         <MappingFragment StoreEntitySet="trackinghours">
           <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
           <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="currentDate" ColumnName="currentDate" />
           <ScalarProperty Name="Arrival" ColumnName="Arrival" />
           <ScalarProperty Name="Departure" ColumnName="Departure" />
         </MappingFragment>

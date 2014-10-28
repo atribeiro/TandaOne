@@ -14,12 +14,6 @@ namespace TandaOne
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-             name: "TandaOne",
-             url: "{controller}/{action}/{id}",
-             defaults: new { controller = "TandaOne", action = "Create", id = UrlParameter.Optional }
-         );
-            
-            routes.MapRoute(
                  name: "History",
                  url: "{controller}/{action}/{id}",
                  defaults: new { controller = "TandaHistory", action = "Index", id = UrlParameter.Optional });
@@ -29,7 +23,11 @@ namespace TandaOne
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
-          
+            routes.MapRoute(
+               name: "TandaOne",
+               url: "{controller}/{action}/{id}",
+               defaults: new { controller = "TandaOne", action = "Create", id = UrlParameter.Optional }
+           );
         }
     }
 }

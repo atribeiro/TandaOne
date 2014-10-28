@@ -12,7 +12,7 @@ namespace TandaOne.Controllers
    
     public class TandaHistoryController : Controller
     {
-        private EmplSampleEntities db = new EmplSampleEntities();
+        private EmployeeEntities2 db = new EmployeeEntities2();
 
     
         public ActionResult Index()
@@ -31,20 +31,27 @@ namespace TandaOne.Controllers
         //    return View(employeedetail);
         //}
 
-        //[Authorize]
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(EmployeeDetail employeedetail)
-        {
-            if (ModelState.IsValid)
-            {
-                db.EmployeeDetails.AddObject(employeedetail);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
 
-            return View(employeedetail);
-        }
+        //public ActionResult Create(int id = 0)
+        //{
+        //    EmployeeDetail Surname = db.EmployeeDetails.Find(id);
+        //    return View();
+        //}
+
+        //[Authorize]
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Create(EmployeeDetail employeedetail)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.EmployeeDetails.Add(employeedetail);
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+
+        //    return View(employeedetail);
+        //}
 
         //[Authorize]
         //public ActionResult Edit(int id = 0)

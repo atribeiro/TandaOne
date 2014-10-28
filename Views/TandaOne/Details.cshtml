@@ -1,4 +1,5 @@
-﻿@model TandaOne.trackinghour
+﻿@using TandaOne
+@model IEnumerable<TandaOne.EmployeeDetail>
 
 @{
     ViewBag.Title = "Details";
@@ -10,10 +11,24 @@
     <legend>trackinghour</legend>
 
     <div class="display-label">
+         @Html.DisplayNameFor(model => model.EmployeeID)
+    </div>
+   <div class="display-field">
+        @Html.(model => model.EmployeeID)
+    </div>
+
+    <div class="display-label">
          @Html.DisplayNameFor(model => model.Surname)
     </div>
+   <div class="display-field">
+        @Html.(model => model.Surname)
+    </div>
+
+    @*<div class="display-label">
+         @Html.DisplayNameFor(model => model.currentDate)
+    </div>
     <div class="display-field">
-        @Html.DisplayFor(model => model.Surname)
+        @Html.DisplayFor(model => model.currentDate)
     </div>
 
     <div class="display-label">
@@ -28,9 +43,9 @@
     </div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Departure)
-    </div>
+    </div>*@
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.EmployeeID }) |
+    @Html.ActionLink("Edit", "Edit", new {  id=Model.e  }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
